@@ -15,6 +15,8 @@ import {
 import { db } from "@/drizzle/db";
 import { formatEventDescription } from "@/lib/formatters";
 
+import { cn } from "./../../../lib/utils";
+
 export default async function EventsPage() {
   const { userId, redirectToSignIn } = await auth();
 
@@ -77,15 +79,19 @@ function EventCard({
   clerkUserId,
 }: EventCardProps) {
   return (
-    <Card className="flex flex-col">
-      <CardHeader>
+    <Card className={cn("flex flex-col", !isActive && "border-secondary/50")}>
+      <CardHeader className={cn(!isActive && "opacity-50")}>
         <CardTitle>{name}</CardTitle>
         <CardDescription>
           {formatEventDescription(durationInMinutes)}
         </CardDescription>
       </CardHeader>
 
-      {description != null && <CardContent>{description}</CardContent>}
+      {description != null && (
+        <CardContent className={cn(!isActive && "opacity-50")}>
+          {description}
+        </CardContent>
+      )}
       <CardFooter className="flex justify-end gap-2 mt-auto">
         {isActive && (
           <CopyEventButton

@@ -5,6 +5,8 @@ import { EventForm } from "@/components/forms/EventForm";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { db } from "@/drizzle/db";
 
+export const revalidate = 0;
+
 export default async function EditEventPage({
   params: { eventId },
 }: {

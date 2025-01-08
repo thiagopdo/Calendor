@@ -8,3 +8,37 @@ export function formatEventDescription(durationInMinutes: number) {
   if (minutes === 0) return hoursString;
   return `${hoursString} ${minutesString}`;
 }
+
+export function formatTimezoneOffset(timezone: string) {
+  return new Intl.DateTimeFormat(undefined, {
+    timeZone: timezone,
+    timeZoneName: "shortOffset",
+  })
+    .formatToParts(new Date())
+    .find((part) => part.type === "timeZoneName")?.value;
+}
+
+const dateFormatter = new Intl.DateTimeFormat(undefined, {
+  dateStyle: "medium",
+});
+
+export function FormatDate(date: Date) {
+  return dateFormatter.format(date);
+}
+
+const timeFormatter = new Intl.DateTimeFormat(undefined, {
+  timeStyle: "short",
+});
+
+export function formatTimeString(date: Date) {
+  return timeFormatter.format(date);
+}
+
+const dateTimeFormatter = new Intl.DateTimeFormat(undefined, {
+  dateStyle: "medium",
+  timeStyle: "short",
+});
+
+export function formatDateTime(date: Date) {
+  return dateTimeFormatter.format(date);
+}

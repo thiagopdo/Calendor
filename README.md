@@ -1,36 +1,91 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Calendar Project
+
+This project is a calendar application built using React, NEON, and Clerk. The application allows users to manage their events and schedules efficiently.
+
+## Features
+
+- User authentication and management with Clerk
+- Real-time data synchronization with NEON
+- Create, update, and delete events
+- Responsive design for mobile and desktop
+
+## Technologies Used
+
+- **React**: A JavaScript library for building user interfaces
+- **NEON**: A real-time data synchronization platform
+- **Clerk**: User authentication and management
 
 ## Getting Started
 
-First, run the development server:
+### Prerequisites
+
+- Node.js (v14 or higher)
+- npm or yarn
+
+### Installation
+
+1. Clone the repository:
 
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/your-username/calendar.git
+cd calendar
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm install
+# or
+yarn install
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+3. Set up environment variables:
+   Create a `.env` file in the root directory and add your NEON and Clerk credentials:
 
-## Learn More
+```env
+REACT_APP_NEON_API_KEY=your-neon-api-key
+REACT_APP_CLERK_FRONTEND_API=your-clerk-frontend-api
+```
 
-To learn more about Next.js, take a look at the following resources:
+### Running the Application
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Start the development server:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+```bash
+npm start
+# or
+yarn start
+```
 
-## Deploy on Vercel
+The application will be available at `http://localhost:3000`.
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+## Folder Structure
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```
+calendar/
+├── public/
+├── src/
+│   ├── components/
+│   ├── pages/
+│   ├── services/
+│   ├── App.js
+│   ├── index.js
+│   └── ...
+├── .env
+├── package.json
+└── README.md
+```
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request for any changes.
+
+## License
+
+This project is licensed under the MIT License.
+
+## Acknowledgements
+
+- [React](https://reactjs.org/)
+- [NEON](https://neon.tech/)
+- [Clerk](https://clerk.dev/)
